@@ -14,12 +14,9 @@ main(int argc, char *argv[]) {
     return 1;
   }
 
-  if (fgets(line, LINE_BUFFER_SIZE, file) == NULL) {
-    fprintf(stderr, "ファイルの読み込みに失敗しました: <%s>\n", file_name);
-    return 1;
-  }
-
+  while (fgets(line, LINE_BUFFER_SIZE, file) != NULL) {
   printf("%s\n", line);
+  }
 
   return 0;
 }
