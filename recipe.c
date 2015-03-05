@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-#define LINE_BUFFER 1024
+#define LINE_BUFFER_SIZE 1024
 
 int
 main(int argc, char *argv[]) {
   FILE *file;
-  char line[LINE_BUFFER];
+  char line[LINE_BUFFER_SIZE];
   char *file_name = argv[1];
 
   file = fopen(file_name, "r");
@@ -14,7 +14,7 @@ main(int argc, char *argv[]) {
     return 1;
   }
 
-  if (fgets(line, LINE_BUFFER, file) == NULL) {
+  if (fgets(line, LINE_BUFFER_SIZE, file) == NULL) {
     fprintf(stderr, "ファイルの読み込みに失敗しました: <%s>\n", file_name);
     return 1;
   }
