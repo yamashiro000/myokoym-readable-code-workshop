@@ -6,8 +6,13 @@ main(void) {
   char line[1024];
 
   file = fopen("recipe-data.txt", "r");
+  if (file == NULL) {
+    return 1;
+  }
 
-  fgets(line, 1024, file);
+  if (fgets(line, 1024, file) == NULL) {
+    return 1;
+  }
 
   printf("%s\n", line);
 
