@@ -15,7 +15,7 @@ main(int argc, char *argv[]) {
   }
 
   while (fgets(line, LINE_BUFFER_SIZE, file) != NULL) {
-    printf("%s\n", line);
+    printf("%s", line);
   }
 
   return 0;
