@@ -13,5 +13,5 @@ recipe.cをコンパイルして実行してください。
 
 ```bash
 $ gcc recipe.c -o recipe
-$ ./recipe
+$ ./recipe recipe-data.txt
 ```
