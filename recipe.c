@@ -1,18 +1,19 @@
 #include <stdio.h>
 
 int
-main(void) {
+main(int argc, char *argv[]) {
   FILE *file;
   char line[1024];
+  char *file_name = argv[1];
 
-  file = fopen("recipe-data.txt", "r");
+  file = fopen(file_name, "r");
   if (file == NULL) {
-    fprintf(stderr, "ファイルをオープンできません: <%s>\n", "recipe-data.txt");
+    fprintf(stderr, "ファイルをオープンできません: <%s>\n", file_name);
     return 1;
   }
 
   if (fgets(line, 1024, file) == NULL) {
-    fprintf(stderr, "ファイルの読み込みに失敗しました: <%s>\n", "recipe-data.txt");
+    fprintf(stderr, "ファイルの読み込みに失敗しました: <%s>\n", file_name);
     return 1;
   }
 
